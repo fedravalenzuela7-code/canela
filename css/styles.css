@@ -427,3 +427,43 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* Video de la home */
+.movie { max-width: 980px; margin: 0 auto; padding: 48px 24px 8px; text-align: center; }
+.movie h2 { font-family: var(--font-display); font-weight: 400; color: var(--brown); font-size: clamp(26px, 4vw, 40px); }
+.movie p { margin: 6px 0 18px; }
+.movie video { width: 100%; height: auto; border: 3px solid var(--brown); border-radius: 14px; box-shadow: 8px 8px 0 var(--brown); background: #000; }
+
+/* ---------- Ajustes celular (orden y superposiciones) ---------- */
+@media (max-width: 760px) {
+  html, body { overflow-x: hidden; }
+  .logo { font-size: 48px; padding: 12px 0 8px; }
+  .site-header > .main-nav { display: grid; grid-template-columns: repeat(2, auto); justify-content: center; gap: 8px 36px; padding: 12px 16px 8px; font-size: 15px; }
+  .header-tools { padding: 6px 16px 12px; }
+  .dropdown-menu { left: 50%; transform: translate(-50%, 6px); text-align: left; }
+  .dropdown:hover .dropdown-menu, .dropdown:focus-within .dropdown-menu { transform: translate(-50%, 0); }
+  /* portada: stickers sin pisarse con la mascota ni con el botón */
+  .hero { min-height: 660px; }
+  .st-main { width: 180px; top: 46%; }
+  .st-salto { width: 120px; left: 3%; top: 3%; }
+  .st-vaso { width: 54px; left: 70%; top: 4%; }
+  .st-moka { width: 54px; left: 86%; top: 15%; }
+  .st-lentes { width: 108px; left: 2%; top: 66%; }
+  .st-skate { width: 104px; left: 72%; top: 64%; }
+  .hero-cta { bottom: 28px; }
+  /* gift cards: texto y stickers en proporción */
+  .grid-gc .giftcard, .giftcard { padding: 10%; }
+  .gc-title { font-size: clamp(18px, 5.6vw, 24px); line-height: 1.15; }
+  .gc-amount { font-size: 12px; }
+  .grid-gc .gc-amount, .gc-amount { bottom: 8%; right: 8%; top: auto; }
+  .grid-gc .art .gc-roll, .product .art .gc-roll { width: 34%; right: 6%; top: 5%; }
+  .grid-gc .art .gc-cup, .product .art .gc-cup { width: 22%; left: 10%; right: auto; top: auto; bottom: 7%; }
+  .meta h3, .meta { overflow-wrap: anywhere; }
+  .subnav { flex-wrap: wrap; justify-content: center; gap: 8px 18px; padding: 10px 12px; }
+  .toast { z-index: 55; bottom: auto; top: 14px; white-space: normal; text-align: center; max-width: 90vw; transform: translate(-50%, -200%); }
+  .toast.show { transform: translate(-50%, 0); }
+}
+@media (max-width: 380px) {
+  .site-header > .main-nav { gap: 8px 24px; font-size: 14px; }
+  .menu-sec li { font-size: 13.5px; }
+}
